@@ -425,6 +425,7 @@ int main(int argc, char *argv[]) {
 		switch (output_filetype) {
 		case GRIM_FILETYPE_PNG:
 			status = cairo_surface_write_to_png(surface, output_filename);
+			break;
 		case GRIM_FILETYPE_JPEG:
 #if HAVE_JPEG
 			status = cairo_surface_write_to_jpeg(
@@ -432,6 +433,7 @@ int main(int argc, char *argv[]) {
 #else
 			assert(false);
 #endif
+			break;
 		}
 	}
 	if (status != CAIRO_STATUS_SUCCESS) {
